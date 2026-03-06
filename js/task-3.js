@@ -1,22 +1,31 @@
-// Оголоси функцію getElementWidth, яка очікує три параметри, 
-// значення яких будуть задаватися під час її виклику: 
-// • content— перший параметр, ширина контенту 
-// • padding — другий параметр, значення горизонтального падінгу для кожної зі сторін 
-// • border — третій параметр, значення товщини бордера для кожної зі сторін 
-// Значення всіх параметрів будуть рядками формату Npx де N — це довільне число, ціле або дробове.
+// Задача 3. Фільтрація масиву чисел
 // 
+// Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) 
+// та значення (value) як параметри. Функція повинна повертати новий масив лише 
+// тих чисел із масиву numbers, які більші за значення value.
 // 
+// Усередині функції:
 // 
-// Доповни код функції так, щоб вона повертала число —загальну ширину елемента. 
-// При розрахунку загальної ширини орієнтуйся на те, 
-// що значення box-sizing дорівнює border-box.
+// Створи порожній масив, у який будеш додавати підходящі числа.
+// Використай цикл для ітерації кожного елемента масиву numbers.
+// Використовуй умовний оператор if усередині циклу для перевірки кожного елемента 
+// и додавання до свого масиву.
+// Поверни свій новий масив з підходящими числами як результат.
 // 
-// 
-function getElementWidth(content, padding, border) {
-    let width = parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2;
-    return width; 
+function filterArray(numbers, value) {
+    let resultArray = [];
+    for (let i = 0; i < numbers.length; i++){
+        if (numbers[i] > value) {
+            totalArray.push(numbers[i]);
+        }
+    }
+    return resultArray;
 }
+    
+    
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
